@@ -1,0 +1,8 @@
+export(process_matrix)
+export(slfm)
+export(slfm_list)
+importFrom(Rcpp,evalCpp)
+importFrom(coda,HPDinterval)
+importFrom(coda,as.mcmc)
+importFrom(tools,file_path_sans_ext)
+useDynLib(slfm)

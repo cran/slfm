@@ -1,0 +1,17 @@
+67f632137f2c72344fd625e100a956f8 *DESCRIPTION
+842e742ed56f4760c893e34cc569b8c9 *NAMESPACE
+e9743678da83348d9a7e570d75f7e1cf *NEWS
+014adecf1f180367189bb57bbca5195f *R/RcppExports.R
+5f03ec1b26946fd9756df798882cb4d9 *R/class_interval.r
+dce71247a3c7006c24a7e75259758a68 *R/process_matrix.r
+e56aec246621d85de4cc226d3d5a3f96 *R/slfm-package.r
+6295402ccac87eb26b013500e8a98633 *R/slfm.r
+6df4e4bfbf4d4f524495699ba00dc1d1 *R/slfm_list.r
+c693f6ae8f9d620381d2369d5a3852df *README.md
+23a0867b7f440797a1cd5e50889435e6 *man/process_matrix.Rd
+63a06fe206d9f2a1c266c5c44c9b6f4d *man/slfm-package.Rd
+a5b8b0defcabdc9c48b9ac9a2108896c *man/slfm.Rd
+677de0b916ca383f9b522735fd5c2fb4 *man/slfm_list.Rd
+c818f4958497e27ca11f51adab2aa3d4 *src/Makevars.win
+3bb4238fe46039b75ec894824dffd73d *src/RcppExports.cpp
+3e25ef05cb2044a839656bfae7ad5510 *src/gibbs.cpp

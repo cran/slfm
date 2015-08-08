@@ -29,7 +29,10 @@ slfm_list <- function(
   files_list <- list.files(path, recursive = recursive, full.names = T)
 
   message("* |Press Ctrl + C to cancel...")
-  pb <- txtProgressBar(0, length(files_list), style = 3, title = "BLA")
+  pb <- txtProgressBar(0, length(files_list), style = 3, title = "")
+
+  MATRIX_CLASSIFICATION <- c("Present", "Marginal", "Absent")
+  names(MATRIX_CLASSIFICATION) <- c("S", "I", "N")
 
   results_list <- list()
   for(i in 1:length(files_list)) {
@@ -37,13 +40,15 @@ slfm_list <- function(
     mat <- read.table(file_name)
 
     res <- slfm(mat, a, b, gamma_a, gamma_b, omega_0, omega_1, sample, burnin, lag, degenerate)
-    final_clas <- names(which.max(table(res$classification)))
-    results_list[[i]] <- c(name=basename(tools::file_path_sans_ext(file_name)), clas=final_clas)
+    clas_table <- table(res$classification)
+    final_clas <- MATRIX_CLASSIFICATION[names(which.max(clas_table))]
+    freq <- format(round(clas_table["S"]/sum(clas_table), 4), nsmall = 4)
+    results_list[[i]] <- c(name = basename(tools::file_path_sans_ext(file_name)), clas = final_clas, frequency = freq)
 
     setTxtProgressBar(pb, i)
   }
   close(pb)
   ret <- as.data.frame(do.call(rbind, results_list))
-  names(ret) <- c("File", "Classification")
+  names(ret) <- c("File", "Classification", "Significant %")
   ret
 }

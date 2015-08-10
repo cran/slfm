@@ -55,10 +55,13 @@ slfm <- function(
   alpha_clas <- format_classification(class_interval(hpds_q_star))
   alpha_clas_mean <- class_mean(stats_q_star)
 
+  z_matrix <- coda::as.mcmc(res[["z"]][after_burnin,])
+  z_matrix <- window(z_matrix, thin = lag)
+
   alpha_matrix <- coda::as.mcmc(res[["alpha"]][after_burnin,])
   alpha_matrix <- window(alpha_matrix, thin = lag)
 
-  table_alpha <- alpha_estimation(res[["alpha"]][after_burnin,], alpha_clas_mean, res[["qstar"]][after_burnin,])
+  table_alpha <- alpha_estimation(res[["alpha"]][after_burnin,], alpha_clas_mean, res[["z"]][after_burnin,])
 
   lambda_matrix <- coda::as.mcmc(res[["lambda"]][after_burnin,])
   lambda_matrix <- window(lambda_matrix, thin = lag)
@@ -74,8 +77,6 @@ slfm <- function(
   table_sigma <- cbind(stats_sigma, hpds_sigma)[,-4]
   colnames(table_sigma)[4:5] = c("Upper HPD", "Lower HPD")
 
-  z_matrix <- coda::as.mcmc(res[["z"]][after_burnin,])
-  z_matrix <- window(z_matrix, thin = lag)
 
   obj <- list(
     x = x,
@@ -103,9 +104,9 @@ print.slfm <- function(x) {
   print(x$classification)
 }
 
-alpha_estimation <- function(x, alpha_clas, q_star_matrix) {
+alpha_estimation <- function(x, alpha_clas, z_matrix) {
   table_list <- lapply(1:length(alpha_clas), function(i) {
-    chain_indicator <- q_star_matrix[, i] > 0.5
+    chain_indicator <- z_matrix[, i] == 1
     if(alpha_clas[i]) {
       chain <- x[chain_indicator, i]
     } else {

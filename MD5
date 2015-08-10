@@ -1,12 +1,12 @@
-c63be246b93827f2e4574d3231acab25 *DESCRIPTION
+ce2efd977e304e8f1f7c028f0511e1a9 *DESCRIPTION
 87b17ef5c347ec4ca6d1641066700c30 *NAMESPACE
-c16341d14e28876570e5c0f0a6b1ff87 *NEWS
+41649bf0cc9c65822824ba54266a1111 *NEWS
 3e11a37d28ca0244100992886a82d3d5 *R/RcppExports.R
 32e909834a9fc4e509216e033d45c8f6 *R/class_interval.r
 baabf72d4bc884b4c1a64efa0ab6929f *R/plot_matrix.r
 87f7eeceee7273541541ba5c589103ec *R/process_matrix.r
 43023f17cf4534c205f467c51594dff3 *R/slfm-package.r
-ccef8b309606ef4d17db2c21c47019ea *R/slfm.r
+b5d2f894bb4bd9bb537c3fdcfbd399f0 *R/slfm.r
 58005212f9aba9f2f545e0f1a0630f3e *R/slfm_list.r
 540f05f21a09f459cc33f9d244ac919d *man/plot_matrix.Rd
 59958c4ef88f62f062a57ede17dd64c7 *man/process_matrix.Rd

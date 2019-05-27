@@ -1,27 +1,27 @@
-#' Sparse Latent Factor Model
+#' Sparse Latent Factor Model (SLFM)
 #'
-#' This function is used to fit a Bayesian sparse
-#' latent factor model.
+#' This function is used to fit a Bayesian Sparse
+#' Latent Factor Model to evaluate patterns in gene expression data matrices.
 #' 
-#' @references
-#' 1. Duarte, J. D. N. and Mayrink, V. D. (2015). Factor analysis with mixture modeling to evaluate coherent patterns in microarray data. In Interdisciplinary Bayesian Statistics, volume 118 of Springer Proceedings in Mathematics & Statistics, pages 185-195. Springer International Publishing.
-#'
-#' @param x matrix with the pre-processed data
-#' @param a prior shape parameter for Gamma distribution 
-#' @param b prior scale parameter for Gamma distribution
-#' @param gamma_a prior parameter for Beta distribution
-#' @param gamma_b prior parameter for Beta distribution
-#' @param omega_0 prior variance of the spike component
-#' @param omega_1 prior variance of the slab component
-#' @param sample sample size after burn-in
-#' @param burnin burn-in size
-#' @param lag lag for MCMC
-#' @param degenerate use the degenerate version of mixture
-#' @return x: data matrix
-#' @return q_star: matrix of MCMC chains for q_star parameter
-#' @return alpha: summary table of MCMC chains for alpha parameter
-#' @return lambda: summary table of MCMC chains for lambda parameter
-#' @return sigma: summary table of MCMC chains for sigma parameter
+#' @references DOI:10.1007/978-3-319-12454-4_15
+#' 
+#' @param x matrix with the pre-processed data.
+#' @param a positive shape parameter of the Inverse Gamma prior distribution (default = 2.1). 
+#' @param b positive scale parameter of the Inverse Gamma prior distribution (default = 1.1).
+#' @param gamma_a positive 1st shape parameter of the Beta prior distribution (default = 1).
+#' @param gamma_b positive 2nd shape parameter of the Beta prior distribution (default = 1).
+#' @param omega_0 prior variance of the spike mixture component (default = 0.01).
+#' @param omega_1 prior variance of the slab mixture component (default = 10).
+#' @param sample sample size to be considered for inference after the burn in period (default = 1000).
+#' @param burnin size of the burn in period in the MCMC algorithm (default = sample/4).
+#' @param lag lag to build the chains based on spaced draws from the Gibbs sampler (defaul = 1).
+#' @param degenerate logical argument (default = FALSE) indicating whether to use the degenerate version of 
+#' the mixture prior for the factor loadings.
+#' @return x: data matrix.
+#' @return q_star: matrix of MCMC chains for q_star parameter.
+#' @return alpha: summary table of MCMC chains for alpha parameter.
+#' @return lambda: summary table of MCMC chains for lambda parameter.
+#' @return sigma: summary table of MCMC chains for sigma parameter.
 #' @return classification: classification of each alpha (`present`, `marginal`, `absent`)
 #' @export
 #' @importFrom coda as.mcmc

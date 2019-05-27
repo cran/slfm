@@ -1,3 +1,8 @@
+slfm 0.2.3
+===========
+
+* fixing a bug related to the calculation of the % significant loadings in the function slfm_fit. 
+
 slfm 0.2.2
 ===========
 

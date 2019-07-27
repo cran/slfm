@@ -3,8 +3,9 @@
 #' This function is used to fit a Bayesian Sparse
 #' Latent Factor Model to evaluate patterns in gene expression data matrices.
 #' 
+#' @references DOI:10.18637/jss.v090.i09
 #' @references DOI:10.1007/978-3-319-12454-4_15
-#' 
+#'  
 #' @param x matrix with the pre-processed data.
 #' @param a positive shape parameter of the Inverse Gamma prior distribution (default = 2.1). 
 #' @param b positive scale parameter of the Inverse Gamma prior distribution (default = 1.1).

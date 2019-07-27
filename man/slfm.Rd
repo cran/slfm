@@ -54,5 +54,7 @@ mat <- matrix(rnorm(2000), nrow = 20)
 slfm(mat, sample = 1000)
 }
 \references{
+DOI:10.18637/jss.v090.i09
+
 DOI:10.1007/978-3-319-12454-4_15
 }

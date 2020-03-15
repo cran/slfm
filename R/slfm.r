@@ -1,10 +1,12 @@
-#' Sparse Latent Factor Model (SLFM)
-#'
-#' This function is used to fit a Bayesian Sparse
-#' Latent Factor Model to evaluate patterns in gene expression data matrices.
+#' @title slfm
+#' @description Bayesian Sparse Latent Factor Model (SLFM) designed for the analysis of coherent patterns in gene expression data matrices. Details about the methodology
+#' being applied here can be found in \emph{Duarte and Mayrink (2015)} and \emph{Duarte and Mayrink (2019)}.
 #' 
-#' @references DOI:10.18637/jss.v090.i09
-#' @references DOI:10.1007/978-3-319-12454-4_15
+#' @references 
+#' 
+#' DOI:10.18637/jss.v090.i09 (\href{https://www.jstatsoft.org/article/view/v090i09}{Duarte and Mayrink; 2019})
+#' 
+#' DOI:10.1007/978-3-319-12454-4_15 (\href{https://link.springer.com/chapter/10.1007/978-3-319-12454-4_15}{Duarte and Mayrink; 2015})
 #'  
 #' @param x matrix with the pre-processed data.
 #' @param a positive shape parameter of the Inverse Gamma prior distribution (default = 2.1). 
@@ -16,8 +18,7 @@
 #' @param sample sample size to be considered for inference after the burn in period (default = 1000).
 #' @param burnin size of the burn in period in the MCMC algorithm (default = sample/4).
 #' @param lag lag to build the chains based on spaced draws from the Gibbs sampler (defaul = 1).
-#' @param degenerate logical argument (default = FALSE) indicating whether to use the degenerate version of 
-#' the mixture prior for the factor loadings.
+#' @param degenerate logical argument (default = FALSE) indicating whether to use the degenerate version of the mixture prior for the factor loadings.
 #' @return x: data matrix.
 #' @return q_star: matrix of MCMC chains for q_star parameter.
 #' @return alpha: summary table of MCMC chains for alpha parameter.
@@ -29,6 +30,10 @@
 #' @importFrom stats window
 #' @importFrom Rcpp evalCpp
 #' @useDynLib slfm
+#' 
+#' @seealso
+#' \code{\link{process_matrix}}, \code{\link{plot_matrix}}
+#'
 #' @examples
 #' mat <- matrix(rnorm(2000), nrow = 20)
 #' slfm(mat, sample = 1000)
@@ -77,7 +82,6 @@ slfm <- function(
   hpds_sigma <- coda::HPDinterval(sigma_matrix)
   table_sigma <- cbind(stats_sigma, hpds_sigma)[,-4]
   colnames(table_sigma)[4:5] = c("Upper HPD", "Lower HPD")
-
 
   obj <- list(
     x = x,

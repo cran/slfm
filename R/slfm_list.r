@@ -1,8 +1,6 @@
-#' Fitting the SLFM to a group of data matrices within a directory.
-#'
-#' This function is used to fit the Bayesian Sparse
-#' Latent Factor Model to all numeric matrices located in a directory.
-#'
+#' @title slfm_list
+#' @description Function to fit the Bayesian Sparse Latent Factor Model to a group of data matrices within a directory. All matrices are supposed to have values
+#' representing the gene expression observed for different genes (rows) and different samples (columns). 
 #' @param path path to the directory where the target data matrices are located.
 #' @param recursive logical argument (default = TRUE) indicating whether the function should look recursively 
 #' inside folders.
@@ -22,6 +20,8 @@
 #' @importFrom utils read.table
 #' @importFrom utils setTxtProgressBar
 #' @importFrom utils txtProgressBar
+#' @seealso
+#' \code{\link{slfm}}, \code{\link{process_matrix}}, \code{\link{plot_matrix}}
 #' @export
 slfm_list <- function(
   path = ".", recursive = TRUE,

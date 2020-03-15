@@ -2,10 +2,15 @@
 % Please edit documentation in R/plot_matrix.r
 \name{plot_matrix}
 \alias{plot_matrix}
-\title{Image graph displaying a given data matrix.}
+\title{plot_matrix}
 \usage{
-plot_matrix(y, standardize.rows = TRUE, reorder.rows = TRUE,
-  reorder.cols = TRUE, high.contrast = TRUE)
+plot_matrix(
+  y,
+  standardize.rows = TRUE,
+  reorder.rows = TRUE,
+  reorder.cols = TRUE,
+  high.contrast = TRUE
+)
 }
 \arguments{
 \item{y}{data matrix to be evaluated.}
@@ -23,5 +28,9 @@ of y to highlight a pattern.}
 to increase contrast in the image of y.}
 }
 \description{
-This function builds an image graph displaying a heat map of a given data matrix.
+Function to build a heat map displaying the values of given data matrix. This graph is useful for a visual inspection of the 
+spatial distribution of the observations within the target matrix.
+}
+\seealso{
+\code{\link{slfm}}, \code{\link{process_matrix}}, \code{\link{slfm_list}}
 }

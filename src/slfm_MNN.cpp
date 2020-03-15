@@ -23,7 +23,7 @@ List slfm_MNN(NumericMatrix x, double a = 2.1, double b = 1.1, double gamma_a = 
 
     arma::mat dinv(m,m);
     dinv.fill(0.0);
-    for(int i = 0; i < m; i++){ dinv[i,i] = 1/sigma2[i]; }
+    for(int i = 0; i < m; i++){ dinv(i,i) = 1/sigma2[i]; }
   
     // matrices to store the chains
     arma::mat alpha_matrix(ite, m);

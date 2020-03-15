@@ -2,7 +2,7 @@
 % Please edit documentation in R/process_matrix.r
 \name{process_matrix}
 \alias{process_matrix}
-\title{Procedure to pre-process the gene expression data to be fitted via SLFM.}
+\title{process_matrix}
 \usage{
 process_matrix(path, output_path, sample_size)
 }
@@ -14,6 +14,9 @@ process_matrix(path, output_path, sample_size)
 \item{sample_size}{number of matrices to be used on the principal component analysis.}
 }
 \description{
-This function is intended to pre-process the data matrices to be fitted 
-through the Sparse Latent Factor Model.
+Function to apply a procedure to pre-process the gene expression data saved in matrices. This pre-processing step 
+is required to allow a fair analysis of the results obtained from the SLFM model.
+}
+\seealso{
+\code{\link{slfm}}, \code{\link{slfm_list}}, \code{\link{plot_matrix}}
 }

@@ -1,14 +1,14 @@
-#' Procedure to pre-process the gene expression data to be fitted via SLFM.
-#'
-#' This function is intended to pre-process the data matrices to be fitted 
-#' through the Sparse Latent Factor Model.
-#'
+#' @title process_matrix
+#' @description Function to apply a procedure to pre-process the gene expression data saved in matrices. This pre-processing step 
+#' is required to allow a fair analysis of the results obtained from the SLFM model.
 #' @param path path to the directory containing the set of matrices to be pre-processed.
 #' @param output_path path to the directory intended to acommodate the saved pre-processed matrices.
 #' @param sample_size number of matrices to be used on the principal component analysis.
 #' @importFrom stats cov
 #' @importFrom utils read.table
 #' @importFrom utils write.table
+#' @seealso
+#' \code{\link{slfm}}, \code{\link{slfm_list}}, \code{\link{plot_matrix}}
 #' @export
 
 process_matrix <- function(path, output_path, sample_size) {

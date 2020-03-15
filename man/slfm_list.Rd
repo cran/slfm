@@ -2,12 +2,22 @@
 % Please edit documentation in R/slfm_list.r
 \name{slfm_list}
 \alias{slfm_list}
-\title{Fitting the SLFM to a group of data matrices within a directory.}
+\title{slfm_list}
 \usage{
-slfm_list(path = ".", recursive = TRUE, a = 2.1, b = 1.1,
-  gamma_a = 1, gamma_b = 1, omega_0 = 0.01, omega_1 = 10,
-  sample = 1000, burnin = round(0.25 * sample), lag = 1,
-  degenerate = FALSE)
+slfm_list(
+  path = ".",
+  recursive = TRUE,
+  a = 2.1,
+  b = 1.1,
+  gamma_a = 1,
+  gamma_b = 1,
+  omega_0 = 0.01,
+  omega_1 = 10,
+  sample = 1000,
+  burnin = round(0.25 * sample),
+  lag = 1,
+  degenerate = FALSE
+)
 }
 \arguments{
 \item{path}{path to the directory where the target data matrices are located.}
@@ -37,6 +47,9 @@ inside folders.}
 the mixture prior for the factor loadings.}
 }
 \description{
-This function is used to fit the Bayesian Sparse
-Latent Factor Model to all numeric matrices located in a directory.
+Function to fit the Bayesian Sparse Latent Factor Model to a group of data matrices within a directory. All matrices are supposed to have values
+representing the gene expression observed for different genes (rows) and different samples (columns).
+}
+\seealso{
+\code{\link{slfm}}, \code{\link{process_matrix}}, \code{\link{plot_matrix}}
 }

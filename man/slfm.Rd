@@ -2,11 +2,21 @@
 % Please edit documentation in R/slfm.r
 \name{slfm}
 \alias{slfm}
-\title{Sparse Latent Factor Model (SLFM)}
+\title{slfm}
 \usage{
-slfm(x, a = 2.1, b = 1.1, gamma_a = 1, gamma_b = 1,
-  omega_0 = 0.01, omega_1 = 10, sample = 1000, burnin = round(0.25
-  * sample), lag = 1, degenerate = FALSE)
+slfm(
+  x,
+  a = 2.1,
+  b = 1.1,
+  gamma_a = 1,
+  gamma_b = 1,
+  omega_0 = 0.01,
+  omega_1 = 10,
+  sample = 1000,
+  burnin = round(0.25 * sample),
+  lag = 1,
+  degenerate = FALSE
+)
 }
 \arguments{
 \item{x}{matrix with the pre-processed data.}
@@ -29,8 +39,7 @@ slfm(x, a = 2.1, b = 1.1, gamma_a = 1, gamma_b = 1,
 
 \item{lag}{lag to build the chains based on spaced draws from the Gibbs sampler (defaul = 1).}
 
-\item{degenerate}{logical argument (default = FALSE) indicating whether to use the degenerate version of 
-the mixture prior for the factor loadings.}
+\item{degenerate}{logical argument (default = FALSE) indicating whether to use the degenerate version of the mixture prior for the factor loadings.}
 }
 \value{
 x: data matrix.
@@ -46,15 +55,18 @@ sigma: summary table of MCMC chains for sigma parameter.
 classification: classification of each alpha (`present`, `marginal`, `absent`)
 }
 \description{
-This function is used to fit a Bayesian Sparse
-Latent Factor Model to evaluate patterns in gene expression data matrices.
+Bayesian Sparse Latent Factor Model (SLFM) designed for the analysis of coherent patterns in gene expression data matrices. Details about the methodology
+being applied here can be found in \emph{Duarte and Mayrink (2015)} and \emph{Duarte and Mayrink (2019)}.
 }
 \examples{
 mat <- matrix(rnorm(2000), nrow = 20)
 slfm(mat, sample = 1000)
 }
 \references{
-DOI:10.18637/jss.v090.i09
+DOI:10.18637/jss.v090.i09 (\href{https://www.jstatsoft.org/article/view/v090i09}{Duarte and Mayrink; 2019})
 
-DOI:10.1007/978-3-319-12454-4_15
+DOI:10.1007/978-3-319-12454-4_15 (\href{https://link.springer.com/chapter/10.1007/978-3-319-12454-4_15}{Duarte and Mayrink; 2015})
+}
+\seealso{
+\code{\link{process_matrix}}, \code{\link{plot_matrix}}
 }

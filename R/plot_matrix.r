@@ -1,7 +1,6 @@
-#' Image graph displaying a given data matrix.
-#'
-#' This function builds an image graph displaying a heat map of a given data matrix.
-#'
+#' @title plot_matrix
+#' @description Function to build a heat map displaying the values of given data matrix. This graph is useful for a visual inspection of the 
+#' spatial distribution of the observations within the target matrix.
 #' @param y data matrix to be evaluated.
 #' @param standardize.rows logical argument (default = TRUE) indicating whether to standardize 
 #' the rows of y to build the image.
@@ -15,6 +14,8 @@
 #' @importFrom grDevices colorRampPalette
 #' @importFrom stats median
 #' @importFrom stats quantile
+#' @seealso
+#' \code{\link{slfm}}, \code{\link{process_matrix}}, \code{\link{slfm_list}}
 #' @export
 
 plot_matrix <- function(y, standardize.rows = TRUE, reorder.rows = TRUE, reorder.cols = TRUE, high.contrast = TRUE) {

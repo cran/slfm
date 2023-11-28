@@ -1,3 +1,9 @@
+slfm 1.0.2
+===========
+
+* including package \alias as per "Documenting packages" in R-exts. 
+
+
 slfm 1.0.1
 ===========
 

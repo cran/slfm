@@ -16,4 +16,5 @@
 #' 
 #' @docType package
 #' @name slfm_package
+#' @aliases slfm-package
 NULL

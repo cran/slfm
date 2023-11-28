@@ -98,7 +98,13 @@ slfm <- function(
   obj
 }
 
-print.slfm <- function(x) {
+#' Print method for an slfm object
+#' @aliases print.slfm
+#' @export
+#' @param x object of the class 'slfm'.
+#' @param ... further arguments passed to or from other methods.
+#'
+print.slfm <- function(x, ...) {
   cat("SLFM object", "\n")
   cat("\n")
   cat("Dimensions","\n")

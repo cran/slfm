@@ -4,7 +4,7 @@ Title: Fitting a Bayesian Sparse Latent Factor Model in Gene Expression
         Analysis
 Authors@R: c(person("Vinicius", "Mayrink", role = c("aut","cre"), email = "vdinizm@gmail.com"),
              person("Joao", "Duarte", role = c("aut")))
-Version: 1.0.1
+Version: 1.0.2
 Author: Vinicius Mayrink [aut, cre],
   Joao Duarte [aut]
 Maintainer: Vinicius Mayrink <vdinizm@gmail.com>
@@ -15,7 +15,7 @@ LinkingTo: Rcpp, RcppArmadillo
 Encoding: UTF-8
 License: GPL-2
 NeedsCompilation: yes
-RoxygenNote: 7.1.0
-Packaged: 2020-03-15 20:20:33 UTC; vinicius
+RoxygenNote: 7.2.3
+Packaged: 2023-11-28 17:51:24 UTC; vinicius
 Repository: CRAN
-Date/Publication: 2020-03-15 22:20:02 UTC
+Date/Publication: 2023-11-28 18:10:02 UTC

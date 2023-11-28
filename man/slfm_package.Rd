@@ -3,6 +3,7 @@
 \docType{package}
 \name{slfm_package}
 \alias{slfm_package}
+\alias{slfm-package}
 \title{slfm: Fitting a Bayesian Sparse Latent Factor Model in Gene Expression Analysis}
 \description{
 Set of tools to find coherent patterns in gene expression (possibly microarray) data
